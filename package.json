@@ -1,0 +1,76 @@
+{
+  "name": "fc_vue_proj_demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "prettier": "prettier --write \"src/**/*.{js,vue,json,less,scss}\"",
+    "lintcss": "stylelint 'src/**/*.less' --fix",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue,jsx}": [
+      "prettier --config .prettierrc --write",
+      "eslint",
+      "git add"
+    ],
+    "src/**/*.{css,scss,less}": [
+      "prettier --config .prettierrc --write",
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "compression-webpack-plugin": "^3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
+    "path": "^0.12.7",
+    "prettier": "^1.18.2",
+    "prettier-stylelint": "^0.4.2",
+    "sass": "^1.18.0",
+    "sass-loader": "^7.1.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-css-modules": "^1.4.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.2",
+    "stylelint-order": "^3.0.0",
+    "stylelint-prettier": "^1.1.1",
+    "stylelint-scss": "^3.8.0",
+    "stylelint-selector-bem-pattern": "^2.1.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.0",
+    "webpack-bundle-analyzer": "^3.3.2"
+  }
+}
